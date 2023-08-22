@@ -2,27 +2,16 @@ import { useState } from "react";
 
 import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0);
+import shoppingicon from "./assets/shopping-icon.svg";
 
+function App() {
   return (
-    <div>
-      <h1>{count}</h1>
-      <button
-        onClick={() => {
-          setCount(count + 1);
-        }}
-      >
-        Tambah
-      </button>
-      <button
-        onClick={() => {
-          setCount(count - 1);
-        }}
-      >
-        Kurang
-      </button>
-    </div>
+    <>
+      <nav className="nav">
+        <img src={shoppingicon} alt="icon" className="nav-icon" />
+        <h1 className="nav-title">Shopping List</h1>
+      </nav>
+    </>
   );
 }
 
