@@ -5,6 +5,12 @@ import "./App.css";
 import shoppingicon from "./assets/shopping-icon.svg";
 
 function App() {
+  const [value, setValue] = useState("");
+  const [todos, setTodos] = useState([
+    { title: "Mouse Logitech", count: 1 },
+    { title: "Keyboard Vortex Series", count: 1 },
+    { title: "Headset DBE", count: 1 },
+  ]);
   return (
     <>
       <nav className="nav">
@@ -14,11 +20,34 @@ function App() {
 
       <section className="container">
         <from className="form">
-          <input className="input" type="text" placeholder="Input your list" />
+          <input
+            onChange={(e) => {
+              setValue(e.target.value);
+            }}
+            value={value}
+            className="input"
+            type="text"
+            placeholder="Input your list"
+          />
           <button className="add-button" type="submit">
             add
           </button>
         </from>
+
+        {todos.length > 0 ? (
+          <div className="todos">
+            {todos.map((todo) => {
+              return (
+                <div>
+                  {todo.title}
+                  {todo.count}
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div>Kosong</div>
+        )}
       </section>
     </>
   );
