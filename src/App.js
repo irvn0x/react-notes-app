@@ -13,6 +13,15 @@ function App() {
     { title: "Keyboard Vortex Series", count: 1 },
     { title: "Headset DBE", count: 1 },
   ]);
+
+  const handleAdditionalCount = (index) => {
+    const newTodos = [...todos];
+
+    newTodos[index].count = newTodos[index].count + 1;
+
+    setTodos(newTodos);
+  };
+
   return (
     <>
       <nav className="nav">
@@ -54,7 +63,10 @@ function App() {
                       <img src={minusIcon} alt="minus icon" />
                     </button>
 
-                    <button className="todo-action-button">
+                    <button
+                      onClick={() => handleAdditionalCount(index)}
+                      className="todo-action-button"
+                    >
                       <img src={plusIcon} alt="plus icon" />
                     </button>
                   </div>
