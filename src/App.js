@@ -14,6 +14,20 @@ function App() {
     { title: "Headset DBE", count: 1 },
   ]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const addedTodos = [
+      ...todos,
+      {
+        title: value,
+        count: 1,
+      },
+    ];
+
+    setTodos(addedTodos);
+  };
+
   const handleAdditionalCount = (index) => {
     const newTodos = [...todos];
 
@@ -38,7 +52,7 @@ function App() {
       </nav>
 
       <section className="container">
-        <from className="form">
+        <form className="form" onSubmit={handleSubmit}>
           <input
             onChange={(e) => {
               setValue(e.target.value);
@@ -51,7 +65,7 @@ function App() {
           <button className="add-button" type="submit">
             add
           </button>
-        </from>
+        </form>
 
         {todos.length > 0 ? (
           <div className="todos">
