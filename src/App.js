@@ -2,9 +2,11 @@ import { useState } from "react";
 
 import "./App.css";
 
-import shoppingicon from "./assets/shopping-icon.svg";
 import plusIcon from "./assets/plus-icon.svg";
 import minusIcon from "./assets/minus-icon.svg";
+
+import Navbar from "./components/Navbar";
+import Container from "./components/Container";
 
 function App() {
   const [value, setValue] = useState("");
@@ -71,12 +73,8 @@ function App() {
 
   return (
     <>
-      <nav className="nav">
-        <img src={shoppingicon} alt="icon" className="nav-icon" />
-        <h1 className="nav-title">Shopping List</h1>
-      </nav>
-
-      <section className="container">
+      <Navbar />
+      <Container>
         <form className="form" onSubmit={handleSubmit}>
           <input
             onChange={(e) => {
@@ -141,7 +139,7 @@ function App() {
         ) : (
           <div>Data List Kamu Kosong!</div>
         )}
-      </section>
+      </Container>
     </>
   );
 }
