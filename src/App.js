@@ -17,6 +17,10 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (!value) {
+      return alert("List tidak boleh kosong!");
+    }
+
     const addedTodos = [
       ...todos,
       {
@@ -26,6 +30,7 @@ function App() {
     ];
 
     setTodos(addedTodos);
+    setValue("");
   };
 
   const handleAdditionalCount = (index) => {
