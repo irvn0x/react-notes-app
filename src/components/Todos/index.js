@@ -7,7 +7,7 @@ import minusIcon from "../../assets/minus-icon.svg";
 
 const Todos = (props) => {
   return (
-    <div className="todos">
+    <div className={styles.todos}>
       {props.todos.map((todo, index, arr) => {
         return (
           <div
