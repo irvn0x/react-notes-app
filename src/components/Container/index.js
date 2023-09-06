@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import styles from "./Container.module.css";
+
 function Container(props) {
-  return <section className="container">{props.children}</section>;
+  return <section className={styles.container}>{props.children}</section>;
 }
 
 Container.propTypes = {
