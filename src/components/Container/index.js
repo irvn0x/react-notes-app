@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 import styles from "./Container.module.css";
 
-function Container(props) {
-  return <section className={styles.container}>{props.children}</section>;
+function Container({ children }) {
+  return <section className={styles.container}>{children}</section>;
 }
 
 Container.propTypes = {

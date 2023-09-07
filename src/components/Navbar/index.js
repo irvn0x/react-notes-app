@@ -5,8 +5,8 @@ import styles from "./Navbar.module.css";
 function Navbar() {
   return (
     <nav className={styles.nav}>
-      <img src={shoppingicon} alt="icon" className={styles.navIcon} />
-      <h1 className={styles.navTitle}>Shopping List</h1>
+      {/* <img src={shoppingicon} alt="icon" className={styles.navIcon} /> */}
+      <h1 className={styles.navTitle}>Notes List</h1>
     </nav>
   );
 }
